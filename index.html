@@ -9,14 +9,6 @@
 <title>Fitness Familia</title>
 </head>
 <body>
-<div id="nojs" style="margin:14px;padding:14px 16px;border-radius:12px;background:#FFF2CC;
-border:1px solid #E8C77A;color:#5c4a12;font:15px/1.5 -apple-system,system-ui,sans-serif">
-<b>Esta es solo una vista previa — los botones no funcionan aquí.</b><br>
-En iPhone: tocá el botón de <b>Compartir</b> y elegí <b>Abrir en Chrome o Edge</b>
-(o usá el link de la app en claude.ai, que es la versión buena).
-En computadora: doble clic al archivo y listo.
-</div>
-<script>document.getElementById('nojs').style.display='none';</script>
 <style>
   :root{
     --bg:#F6F7F9; --surface:#FFFFFF; --surface2:#F0F2F6; --border:#E1E5EC;
@@ -545,9 +537,54 @@ En computadora: doble clic al archivo y listo.
    }
 ══════════════════════════════════════════════════════════════════ */
 var PLAN = {
-  semana: 0,
-  actualizado: null,
-  fco: null,
+  semana: 1,
+  actualizado: "2026-07-27",
+  fco: {
+    foco: [
+      "Semana de fibra baja: verdura COCIDA, papa pelada, sin aguacate.",
+      "Sal: ½ cdta en 500 ml a las 06:00, antes de entrenar.",
+      "Sesión de evaluación: anotá peso × reps de cada serie."
+    ],
+    dieta: {
+      resumen: "≈2,200 kcal entreno · 1,850 descanso · 170 g proteína · ventana 09:00–17:00",
+      dias: {
+        2: { tit:"Martes · entreno", kcal:"2,249 kcal · 169 P · 143 C", comidas:[
+          {n:"09:00 · post-entreno", q:"200 g puyazo recortado · 150 g arroz · 110 g ejote cocido · 24 g AOVE · 12 g almendras · 100 g yogurt griego 0%"},
+          {n:"13:00", q:"200 g pechuga de pollo · 215 g papa pelada · 82 g calabacín + 55 g pimiento cocidos · 21 g AOVE · 40 g mozzarella · 8 g mantequilla"},
+          {n:"16:45", q:"40 g avena · 250 ml leche · 1 scoop whey"}]},
+        3: { tit:"Miércoles · entreno", kcal:"2,234 kcal · 172 P · 138 C", comidas:[
+          {n:"09:00 · post-entreno", q:"225 g posta · 245 g papa pelada · 110 g brócoli cocido · 29 g AOVE + 6 g mantequilla · 12 g almendras · 20 g mozzarella"},
+          {n:"13:00", q:"3 huevos · 120 g posta molida · 195 g papa pelada · 66 g champiñón + 72 g calabacín cocidos · 18 g AOVE · 15 g mozzarella"},
+          {n:"16:45", q:"250 g yogurt griego 0% · 40 g avena · 60 g banano · 1 scoop whey"}]},
+        4: { tit:"Jueves · entreno", kcal:"2,206 kcal · 170 P · 139 C", comidas:[
+          {n:"09:00 · post-entreno", q:"315 g tilapia · 205 g arroz · 110 g brócoli cocido · 29 g AOVE + 8 g mantequilla · 12 g almendras · 25 g mozzarella"},
+          {n:"13:00", q:"1 lata de sardina CON ESPINA escurrida · 2 huevos · 205 g papa pelada · 82 g repollo cocido · 21 g AOVE"},
+          {n:"16:45", q:"200 g yogurt griego 0% · 1 scoop whey · 40 g avena"}]},
+        5: { tit:"Viernes · entreno", kcal:"2,228 kcal · 172 P · 133 C", comidas:[
+          {n:"09:00 · post-entreno", q:"235 g pechuga de pollo · 205 g camote pelado · 66 g ejote + 44 g pimiento cocidos · 33 g AOVE · 12 g almendras · 100 g yogurt griego 0%"},
+          {n:"13:00", q:"80 g hígado de res cocido con cebolla (o 140 g más de posta molida si aún no hay ferritina) · 140 g posta molida · 215 g papa pelada · 55 g champiñón + 66 g repollo cocidos · 19 g AOVE + 8 g mantequilla · 30 g mozzarella"},
+          {n:"16:45", q:"1 scoop whey · 40 g avena · 250 ml leche"}]},
+        6: { tit:"Sábado · entreno", kcal:"2,206 kcal · 170 P · 139 C", comidas:[
+          {n:"09:00 · post-entreno", q:"225 g puyazo a la parrilla · 170 g arroz · 66 g calabacín + 55 g ejote cocidos · 31 g AOVE · 12 g almendras · 100 g yogurt griego 0%"},
+          {n:"13:00", q:"3 huevos · 100 g pechuga de pollo · 45 g mozzarella · 82 g champiñón cocido · 44 g tomate · 19 g AOVE · 185 g papa pelada"},
+          {n:"16:45", q:"150 g yogurt griego 0% · 1 scoop whey · 40 g avena · 60 g banano"}]},
+        0: { tit:"Domingo · descanso + cocción", kcal:"1,853 kcal · 172 P · 28 C · ventana 11:00–19:00", comidas:[
+          {n:"11:00", q:"4 huevos · 30 g mozzarella · 99 g champiñón cocido · 82 g tomate · 18 g AOVE"},
+          {n:"15:00", q:"1 lata de sardina CON ESPINA + 1 lata de atún en agua · 110 g de verdura (romana, pepino, tomate, rábano) · 10 g AOVE + limón"},
+          {n:"18:45", q:"295 g muslo de pollo deshuesado · 72 g coliflor + 82 g brócoli + 82 g calabacín cocidos · 12 g AOVE · 250 g yogurt griego 0% · 16 g macadamia"}]},
+        1: { tit:"Lunes · descanso", kcal:"Hoy arrancamos martes — descansá y hacé la compra", comidas:[
+          {n:"Hoy", q:"Comé como venías comiendo. El plan arranca el martes."}]}
+      },
+      reglas: [
+        "Azúcar cero. Sin excepciones.",
+        "3 litros de agua al día.",
+        "Sin creatina ni magnesio hasta tener la sangre sacada.",
+        "Si te inflás o dan gases: la fibra BAJA, no sube."
+      ]
+    },
+    entreno: null,
+    nota: "Semana 1. La comida ya está calibrada a tus números. El entrenamiento espera tus marcas de la sesión de evaluación — anotá peso × reps de cada serie y me las mandás."
+  },
   mafer: null,
   santi: null
 };
@@ -887,9 +924,19 @@ function pintarPlan(){
          pl.foco.map(function(x){ return '<div class="foco">'+esc(x)+'</div>'; }).join("")+'</div>';
   }
   if(pl.dieta){
-    h += '<h2>Comida</h2><div class="card">';
-    if(pl.dieta.resumen) h += '<p style="margin:0 0 6px;font-size:13px;color:var(--faint);font-weight:600">'+esc(pl.dieta.resumen)+'</p>';
-    h += (pl.dieta.comidas||[]).map(function(m){
+    /* menú del día: dieta.dias[0..6] con 0=domingo; si no hay, cae a dieta.comidas */
+    var dd = pl.dieta.dias, hoyN = new Date().getDay(), dia = dd ? dd[hoyN] : null;
+    var comidas = dia ? dia.comidas : (pl.dieta.comidas || []);
+    h += '<h2>Comida'+(dia ? ' de hoy' : '')+'</h2><div class="card">';
+    if(dia){
+      h += '<p style="margin:0 0 3px;font-size:12px;font-weight:700;letter-spacing:.06em;'+
+           'text-transform:uppercase;color:var(--accent)">'+esc(dia.tit)+'</p>';
+      if(dia.kcal) h += '<p style="margin:0 0 8px;font-size:12.5px;color:var(--faint);'+
+           'font-variant-numeric:tabular-nums">'+esc(dia.kcal)+'</p>';
+    }else if(pl.dieta.resumen){
+      h += '<p style="margin:0 0 6px;font-size:13px;color:var(--faint);font-weight:600">'+esc(pl.dieta.resumen)+'</p>';
+    }
+    h += comidas.map(function(m){
       return '<div class="meal"><p class="n">'+esc(m.n)+'</p><p class="q">'+esc(m.q)+'</p>'+
              (m.c ? '<p class="c">'+esc(m.c)+'</p>' : '')+'</div>';
     }).join("");
@@ -898,6 +945,22 @@ function pintarPlan(){
            pl.dieta.reglas.map(function(r){ return '<div class="foco">'+esc(r)+'</div>'; }).join("")+'</div>';
     }
     h += '</div>';
+    /* los otros días, plegados */
+    if(dd){
+      var ORD=[1,2,3,4,5,6,0], otros='';
+      ORD.forEach(function(n){
+        if(n===hoyN || !dd[n]) return;
+        otros += '<div class="sesion"><p class="sn">'+esc(dd[n].tit)+
+          (dd[n].kcal ? ' <span style="font-weight:400;color:var(--faint)">· '+esc(dd[n].kcal)+'</span>' : '')+'</p>'+
+          dd[n].comidas.map(function(m){
+            return '<div class="ex"><span>'+esc(m.n)+'</span><span class="sr" style="max-width:62%;'+
+                   'text-align:right;white-space:normal">'+esc(m.q)+'</span></div>';
+          }).join("")+'</div>';
+      });
+      if(otros) h += '<details class="more" style="margin-top:10px"><summary style="list-style:none;'+
+        'color:var(--accent);font-weight:600;font-size:14px;cursor:pointer">Ver los otros días de la semana</summary>'+
+        '<div class="card" style="margin-top:10px">'+otros+'</div></details>';
+    }
   }
   if(pl.entreno){
     h += '<h2>Entrenamiento</h2><div class="card">';
