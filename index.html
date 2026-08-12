@@ -538,13 +538,13 @@
 ══════════════════════════════════════════════════════════════════ */
 var PLAN = {
   semana: 1,
-  actualizado: "2026-08-09",
+  actualizado: "2026-08-12",
   fco: {
     foco: [
-      "REINICIO — lunes 10 es tu día 1. Sin culpa y sin mirar atrás.",
-      "Lunes en ayunas: báscula, cinta y fotos ANTES de entrenar (toca quincena).",
-      "Esta semana: las 2 sesiones de evaluación — anotá peso × reps de cada serie.",
-      "Sal: ½ cdta en 500 ml a las 06:00. Fibra baja: verdura cocida, papa pelada, sin aguacate."
+      "Arrancaste miércoles 12. Esta semana: X y J son EVALUACIÓN, S y D entreno real.",
+      "Anotá peso × reps de CADA serie — de esos números sale tu mesociclo.",
+      "Mañana jueves en ayunas: báscula. Domingo en ayunas: báscula + cinta + fotos.",
+      "Días que entrenás: menú de entreno. Viernes: menú de descanso. Fibra baja aún."
     ],
     dieta: {
       resumen: "≈2,200 kcal entreno · 1,850 descanso · 170 g proteína · ventana 09:00–17:00",
@@ -585,8 +585,41 @@ var PLAN = {
         "Si te inflás o dan gases: la fibra BAJA, no sube."
       ]
     },
-    entreno: null,
-    nota: "Semana 1, reinicio del 10 de agosto. La comida está calibrada. El entrenamiento espera tus marcas de las 2 sesiones de evaluación."
+    entreno: {
+      resumen: "Semana de evaluación · X y J miden, S y D entrenan · agua con sal 30-60 min antes",
+      sesiones: [
+        { sn:"MIÉRCOLES · Evaluación 1 — Empuje y jalón", items:[
+          {e:"Calentamiento: 5 min bici + dislocaciones + band pull-apart", sr:"—"},
+          {e:"Dominadas — máximas reps limpias, 2 series", sr:"máx · 3 min"},
+          {e:"Press banca mancuernas — rampa hasta 8-10 con 2 de sobra", sr:"anotar lb×reps"},
+          {e:"Remo con barra — rampa hasta 8-10 con 2 de sobra", sr:"anotar lb×reps"},
+          {e:"Fondos en paralelas (o asistidos)", sr:"máx reps"},
+          {e:"Lagartijas — máximas limpias, pecho al piso", sr:"máx reps"}]},
+        { sn:"JUEVES · Evaluación 2 — Pierna y hombro", items:[
+          {e:"Sentadilla con barra — rampa desde barra vacía, 8 con 2 de sobra", sr:"si la técnica se rompe, parar"},
+          {e:"Prensa 45° — 10-12 con 2 de sobra", sr:"anotar solo discos"},
+          {e:"Press militar mancuernas — 8-10 con 2 de sobra", sr:"anotar lb×reps"},
+          {e:"Elevación lateral — 12-15 con 1 de sobra (empezá 10 lb)", sr:"sin balanceo"},
+          {e:"Curl femoral — 10-12 con 2 de sobra", sr:"anotar"},
+          {e:"Video de perfil: 1 sentadilla y 1 dominada", sr:"para revisar técnica"}]},
+        { sn:"SÁBADO · A — Tirón (espalda ancha + posterior)", items:[
+          {e:"Dominadas", sr:"4 × (tu máx − 2) · 150 s"},
+          {e:"Remo con barra — peso del jueves", sr:"4×8-10 · RIR 3 · 120 s"},
+          {e:"Jalón al pecho agarre ancho", sr:"3×10-12 · 90 s"},
+          {e:"Face pull", sr:"4×15 · 60 s"},
+          {e:"Pájaro (deltoide posterior)", sr:"3×15 · 60 s"},
+          {e:"Curl con barra Z", sr:"2×10-12 · 60 s"}]},
+        { sn:"DOMINGO · B — Empuje (pecho + deltoide lateral)", items:[
+          {e:"Press banca mancuernas — un escalón bajo tu peso de eval", sr:"4×8-10 · RIR 3 · 150 s"},
+          {e:"Press inclinado 30° máquina o Smith", sr:"3×10-12 · 120 s"},
+          {e:"Elevación lateral — peso del jueves", sr:"4×12-15 · RIR 2 · 60 s"},
+          {e:"Fondos asistidos o lagartijas", sr:"2 × (máx − 3) · 90 s"},
+          {e:"Extensión de tríceps en polea", sr:"3×12-15 · 60 s"},
+          {e:"Plancha RKC", sr:"3×25 s · 45 s"}]}
+      ],
+      cardio: "Viernes: caminata 35 min. Piso de 8,500 pasos diarios."
+    },
+    nota: "Semana 1, arrancada miércoles 12. X y J son evaluación: de esos números sale tu mesociclo completo. Mandame peso × reps el domingo."
   },
   mafer: null,
   santi: null
